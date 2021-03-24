@@ -49,9 +49,9 @@
             </select>
         </p>
         
-        <p>
-            <label for="gender">Gender:*</label>
-            <input type="text" name="gender" id="petGender">
+        <p id="petGender">
+            <input type="radio" name="gender" value="male" id="male"> Male
+            <input type="radio" name="gender" value="female" id="female"> Female
         </p>
         <p>
             <label for="breed">Breed:*</label>
@@ -83,6 +83,7 @@
         <div id="profits">
             
         </div>
+        <div class="table-wrap"> <!--table wrap-->
         <table>
             <thead>
                 <tr>
@@ -98,17 +99,18 @@
                 </tr>
             </thead>
 
-            <div>
+            <div class="search">
 
                 <input type="text" name="search" id="searchPet">
                 <button class="btn btn-warning" id="searchBtn">Search</button>
 
             </div>
-
+            
             <tbody id="pet-table">
 
             </tbody>
         </table>
+    </div> <!--table wrap-->
     </main>
 
     <footer class="container">

@@ -44,7 +44,7 @@ class Pet{
 // get the value from inputs and store them in vars
 var txtName=document.getElementById('petName');
 var txtAge=document.getElementById('petAge');
-var txtGender=document.getElementById('petGender');
+var txtGender = document.querySelectorAll("input[type='radio']:checked");
 var txtBreed=document.getElementById('petBreed');
 var txtService=document.getElementById('petService');
 var txtOwner=document.getElementById('ownerName');
@@ -53,7 +53,8 @@ var txtType=document.getElementById('type');
 
 
 function register(){
-    if(txtName.value !="" && txtAge.value !="" && txtGender.value!=""){
+    
+    if(txtName.value !="" && txtAge.value !="" && txtBreed.value!=""){
         // create a generic thePet
         var thePet=new Pet(txtName.value,txtAge.value,txtGender.value,txtBreed.value,txtService.value,txtOwner.value,txtPhone.value,txtType.value);
         console.log(thePet);
@@ -121,11 +122,17 @@ function init(){
     
     var scooby=new Pet("Scooby",50,"Male","Dane","full","Shaggy","555-555-555","dog",1);
     var scrapy=new Pet("Scrappy",40,"Male","Dane","shower","Shaggy","555-555-555","dog",2);
+    var lassie=new Pet("Lassie",50,"Female","Golden Retriever","full","Jeff Baskins","555-555-555","dog",2);
+    var irwin=new Pet("Irwin",10,"Male","Australian","nails","Simon Bolivar","555-555-555","dog",2);
     salon.pets.push(scooby);
     salon.pets.push(scrapy);
+    salon.pets.push(lassie);
+    salon.pets.push(irwin)
     // create pets 
     displayTable(scooby);
     displayTable(scrapy);
+    displayTable(irwin);
+    displayTable(lassie);
     profitCalculation();
     $('#registerBtn').on('click',register);
     $('#searchBtn').on('click',searchPet);

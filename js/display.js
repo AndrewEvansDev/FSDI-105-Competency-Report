@@ -31,7 +31,7 @@ function displayTable(aPet){
             <td> ${aPet.owner}</td>
             <td> ${aPet.phone}</td>
             <td> $${aPet.price}</td>
-            <td><button class="btn btn-danger" onclick="deletePet(${aPet.id})">Delete</button></td>
+            <td class="deleteButton" onclick="deletePet(${aPet.id})"><i class="fas fa-window-close"></i></td>
         </tr>
     `;
     $('#pet-table').append(row);

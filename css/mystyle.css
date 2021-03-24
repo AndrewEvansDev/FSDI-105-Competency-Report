@@ -15,7 +15,49 @@ body{
 .selected{
     border:2px solid red;
 }
+.table-wrap{
+    display:flex;
+    flex-direction:column;
+    background-color: beige;
+    padding:1rem;
+    border:1px solid black;
+    border-radius: 10px;
+}
 
+tr:nth-child(even) {
+    background-color:rgba(201, 201, 178, 0.623);
+}
+
+.search{
+    text-align: right;
+}
+
+@media(max-width:768px){
+    td:nth-of-type(1){
+        display:none;
+    }
+    td:nth-of-type(7){
+        display:none;
+    }
+    td:nth-of-type(8){
+        display:none;
+    }
+    th:nth-of-type(1){
+        display:none;
+    }
+    th:nth-of-type(7){
+        display:none;
+    }
+    th:nth-of-type(8){
+        display:none;
+    }
+}
+
+.deleteButton{
+color:red;
+
+
+}
 
 /* services */
 
