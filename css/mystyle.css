@@ -7,91 +7,56 @@ body{
     background-image: url(/img/doggyprint.webp);
     background-repeat:repeat;
 } 
-.container{
-    background-color: rgba(139, 69, 19, 0.37);
-}
-.container h2{
-    font-weight:900;
-    text-align: center;
-    margin-bottom:2rem;
-    text-shadow:1px 1px #e1e1e1be;
-}
+
 
 
 /* registration */
-#pets{
-    /* display:grid;
-    grid-template-columns: repeat(2,1fr);
-    column-gap: 2rem;
-    row-gap:1rem; */
-    margin-top:1rem;
-    margin-bottom:1rem;
-    font-weight:600;
-    background-color:rgba(0, 0, 0, 0.664);
-    color:white;
-    border-radius:10px;
-    /* padding:1rem; */
+
+.selected{
+    border:2px solid red;
 }
 
-#petGender, #petService{
-    margin: 1rem 0;
-
-}
-
-#registerButton{
-    background-color:black;
-    color:white;
-    font-weight:700;
-    border-radius:10px;
-    margin-bottom:0.5rem;
-}
-
-@media(min-width:768px){
-.form-wrap{
-    padding: 0 15rem;
-    }
-}
-
-
-/* footer */
-.footer{
-    display:flex;
-    justify-content:space-between;
-    color:white;
-    background-color:black;
-    height:25vh;
-    padding:1rem;
-    text-align:center;
-    align-content:center;
-}
-#copyright{
-    align-self:flex-end;
-}
-@media(max-width:768px){
-    .footer{
-        flex-direction:column;
-        justify-content:center;
-    }
-    #copyright{
-        order:3;
-        align-self:center;
-    }
-}
-@media(max-width:768px){
-    #address{
-        margin-top:0.6rem;
-    }
-}
-
-.container h2{
-    font-size:3rem;
-}
 
 /* services */
-@media(min-width:768px){
 
+#toggle{
+    max-width: 90%;
+    margin-top:2rem;
+    
 }
 
-.carosel_limitor{
-    max-height:450px;
+#serv2,#serv3,#serv4{
+    display:none;
 }
+#toggle p{
+    font-size:larger;
+    font-weight: bold;
+    text-shadow: .66px .66px rgba(255, 255, 255, 0.651);
+}
+
+
+#serv1 img,#serv2 img,#serv3 img,#serv4 img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.btn-wrap{
+    display:flex;
+    justify-content: space-between;
+    margin: 1rem 0rem -0.5rem 0rem;  
+    position:relative;
+    z-index: 3000;
+}
+
+#serviceBtn1,#serviceBtn2,#serviceBtn3,#serviceBtn4{
+    border: 1px solid black;
+    background-color: black;
+    color:white;
+    height: auto;
+    min-height: 50px;
+    flex:1;
+    font-weight: 800;
+} 
+#serviceBtn1:hover,#serviceBtn2:hover,#serviceBtn3:hover,#serviceBtn4:hover{
+    background-color:rgba(0, 0, 0, 0.85);
+} 

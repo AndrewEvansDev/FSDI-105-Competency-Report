@@ -1,77 +1,30 @@
 const salon={
-    name:'The Pampered Pup',
+    name:'The Fashion Pet',
     address:{
-        city: 'Kelso',
-        street: 'Main St',
-        number: '5862',
-        state: 'WA',
-        zip: '98626'
+        city:'Tijuana',
+        street:'Av. Univesidad',
+        number:'262-k'
     },
     hours:{
         open:'9:00 am',
         close:'5:00 pm'
     },
-    services:[
-    {
-        name:'Canine Grooming Services',
-        desc:'a full service cut and grooming',
-        msg:'We take pride in our work, taking care of our doggos is our number one priority. You won\'t find the level of care nor experience elsewhere, you might as well just give us your money unless you hate your doggo.',
-        price:200},
-    {
-        name:'Deshedding',
-        desc:'prevents excessive shedding at home',
-        msg:'While it is nearly impossible to stop shedding completely, a full service deshedding treatment will help curb excessive shedding at home, leaving your couches in great shape.',
-        price:50},
-    {
-        name:'Carding &amp; Hand Stripping',
-        desc:'the removal of a dog’s undercoat',
-        msg:'The undercoat is the soft, short, downy and dense hair under the top (or outer) coat. The undercoat insulates and protects the skin in colder weather.',
-        price: 100},
-    {
-        name:'Undercoat Deshedding',
-        desc:'another version of carding, to help remove undercoat',
-        msg:'Shedding is a natural process for cats, dogs and other animals. Cats and dogs completely replace their coat every spring and autumn to adjust to the changes in temperature, and shedding can also happen throughout the year because pets live in our warm homes.',
-        price:50},
-    {
-        name:'Hand Stripping',
-        desc:'certain dogs require hand striping to be effectively groomed',
-        msg:'The difference between clipping and hand-stripping is that not only is hand-stripping done by hand, but it removes coat from the root (not just the top layer) so a new coat is able to grow in.',
-        price:100},
-    {
-        name:'Carding &amp; Hand Stripping',
-        desc:'this is a comination of services',
-        msg:'Dogs that require hand striping: Airedale Terrier, Bouvier de Flanders, Affenpinscher, Cairn Terrier, Wire Fox Terrier, Jack Russel Terrier, German Wirehaired Pointer, Schnauzer, Wirehaired Pointing, Griffon,Wirehaired Dachshund',
-        price:100},
-    {
-        name:'Feline Grooming Services',
-        desc:'cats are gross',
-        msg:'While we prefer not to do cats, we will for the right price. It is widely acknowledged that dogs are superior to cats, so it\'s our guess why you would still choose to have such an inferior disgusting beast, but since you did we\'ll trim its coat for no less than $1000.',
-        price:1000}
-        ],
     pets:[]
 }
 
-var {name,address:{city,street,number,state,zip}, hours:{open,close}}=salon;
-
+var {name,address:{city,street,number},hours:{open,close}}=salon; 
 
 function displayInfo(){
     document.getElementById('footer-info').innerHTML=`
-        <div><h2><strong><em>${name}</em></strong></h2></div>
-        
-        <div id="copyright"><small>&#169;2021: All rights reserved</small></div>  
-
-        <div><p id="address">${number} ${street} ${city}, ${state} ${zip}</p>
-        <p>Open M-F ${open}-${close}</p></div>       
-    `
+    <p> ${name}</p>
+    <p> ${street} ${number}, ${city}</p>
+    <p> It opens from ${open} to ${close}</p>
+    `;
 }
-displayInfo()
 
-// for(var i=0;i<salon.pets.length;i++){
-//     console.log(salon.pets[i]);
-// }
-
+c=0;
 class Pet{
-    constructor(name,age,gender,breed,service,owner,phone,email){
+    constructor(name,age,gender,breed,service,owner,phone,type){
         this.name=name;
         this.age=age;
         this.gender=gender;
@@ -79,20 +32,16 @@ class Pet{
         this.service=service;
         this.owner=owner;
         this.phone=phone;
-        this.email=email;
         this.price=0;
+        this.type=type;
+        this.id=c++;
     }
 }
 
-//create pets
-var scooby=new Pet('Scooby',50,'Male','Great Dane','Full Service','Roderick McShagginson','323-232-4444','shagawag@mysterymachine.com');
-salon.pets.push(scooby)
-// var scrappy=new Pet("scrappy",40,"male","Dane","Nails cut","Shaggy","555-323-2345");
-// salon.pets.push(scrappy);
-
 //create register function
 
-//get value from inputs and store them in variables
+
+// get the value from inputs and store them in vars
 var txtName=document.getElementById('petName');
 var txtAge=document.getElementById('petAge');
 var txtGender=document.getElementById('petGender');
@@ -100,36 +49,32 @@ var txtBreed=document.getElementById('petBreed');
 var txtService=document.getElementById('petService');
 var txtOwner=document.getElementById('ownerName');
 var txtPhone=document.getElementById('ownerPhone');
-var txtEmail=document.getElementById('ownerEmail');
+var txtType=document.getElementById('type');
 
 
-
-function register(thePet){
-    if(txtName.value !="" && txtAge !="" && txtBreed !="" &&txtGender.value !="" && txtService.value !="" && txtOwner.value !="" && txtPhone.value !="" && txtEmail.value !=""){
-    //document.getElementById("pets").innerHTML="";
-    //create a generic pet/ThePet
-    var thePet=new Pet(txtName.value,txtAge.value,txtGender.value,txtBreed.value,txtService.value,txtOwner.value,txtPhone.value,txtEmail.value)
-    // get from txtName.value(grabbed from page inputs)
-    //pass parameters/the values stored in variables
-
-    //push thePet into the array
-    salon.pets.push(thePet);
-    clear();
-    display();
-}else{
-        alert('please complete form')
+function register(){
+    if(txtName.value !="" && txtAge.value !="" && txtGender.value!=""){
+        // create a generic thePet
+        var thePet=new Pet(txtName.value,txtAge.value,txtGender.value,txtBreed.value,txtService.value,txtOwner.value,txtPhone.value,txtType.value);
+        console.log(thePet);
+        //push thePet into the array
+        salon.pets.push(thePet);
+        displayTable(thePet);
+        console.log(salon.pets);
+        clear();
+    }else{
+        alert("Hey you have to complete all the fields");
     }
 }
 
 function clear(){
-    txtName.value='';
-    txtAge.value='';
-    txtGender.value='Select Gender';
-    txtBreed.value='';
-    txtService.value='Select Service';
-    txtOwner.value='';
-    txtPhone.value='';
-    txtEmail.value='';
+    txtName.value="";
+    txtAge.value="";
+    txtGender.value="";
+    txtBreed.value="";
+    txtService.value="";
+    txtOwner.value="";
+    txtPhone.value="";
 }
 
 function profitCalculation(){
@@ -137,5 +82,55 @@ function profitCalculation(){
     for(var i=0;i<salon.pets.length;i++){
         sum=sum+salon.pets[i].price;
     }
-    document.getElementById('').innerHTML=`Profits: $${sum}`
+    document.getElementById('profits').innerHTML=`Profits: $${sum}`;
 }
+
+function deletePet(petId){
+    console.log(petId+'deleted');
+    //select row with the pet
+    
+    var tr=$('#'+petId)
+    var indexDelete;
+    //search for it
+
+    for(let i = 0;i<salon.pets.length;i++){
+        var selected=salon.pets[i];
+        if(selected.id===petId){
+            indexDelete=i;
+        }
+    }
+    //delete from array
+    salon.pets.splice(indexDelete,1);
+    //delete from html
+    tr.remove();
+}
+
+function searchPet(){
+    var ss = $('#searchPet').val();
+    var searchString=ss.toLowerCase();
+    for (var i=0; i<salon.pets.length;i++){
+        var selected = salon.pets[i];
+        if(ss===selected.name.toLowerCase()||searchString===selected.service.toLowerCase()){
+            $('#'+selected.id).addClass('selected');
+        }
+    }
+}
+
+
+function init(){
+    
+    var scooby=new Pet("Scooby",50,"Male","Dane","full","Shaggy","555-555-555","dog",1);
+    var scrapy=new Pet("Scrappy",40,"Male","Dane","shower","Shaggy","555-555-555","dog",2);
+    salon.pets.push(scooby);
+    salon.pets.push(scrapy);
+    // create pets 
+    displayTable(scooby);
+    displayTable(scrapy);
+    profitCalculation();
+    $('#registerBtn').on('click',register);
+    $('#searchBtn').on('click',searchPet);
+
+    // hook events
+}
+
+window.onload=init;
