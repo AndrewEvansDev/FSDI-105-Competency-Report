@@ -36,6 +36,9 @@ tr:nth-child(even) {
     td:nth-of-type(1){
         display:none;
     }
+    td:nth-of-type(4){
+        display:none;
+    }
     td:nth-of-type(7){
         display:none;
     }
@@ -43,6 +46,9 @@ tr:nth-child(even) {
         display:none;
     }
     th:nth-of-type(1){
+        display:none;
+    }
+    th:nth-of-type(4){
         display:none;
     }
     th:nth-of-type(7){
@@ -55,9 +61,25 @@ tr:nth-child(even) {
 
 .deleteButton{
 color:red;
+}
 
+.form-wrap{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(150px, 400px));
+    grid-gap:2rem;
+}
+@media(max-width:768px){
+    .form-wrap{
+        grid-template-columns: auto;
+    }
+}
+
+.radio-bg{
+
+    font-weight: 800;
 
 }
+
 
 /* services */
 

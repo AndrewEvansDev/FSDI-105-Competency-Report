@@ -31,50 +31,72 @@
     </header>
 
     <main class="container">
-        <h2>Register</h2>
-        <p>
-            <label for="name" class="form-label">Name:*</label>
-            <input type="text" name="name" id="petName">
-        </p>
-        <p>
-            <label for="age">Age:*</label>
-            <input type="number" name="age" id="petAge">
-        </p>
-        <p>
-            <label for="type">Type:</label>
-            <select name="type" id="type">
-                <option value="dog">Dog</option>
-                <option value="cat">Cat</option>
-                <option value="bird">Bird</option>
-            </select>
-        </p>
-        
-        <p id="petGender">
-            <input type="radio" name="gender" value="male" id="male"> Male
-            <input type="radio" name="gender" value="female" id="female"> Female
-        </p>
-        <p>
-            <label for="breed">Breed:*</label>
-            <input type="text" name="breed" id="petBreed">
-        </p>
-        <p>
-            <label for="service">Service:*</label>
-            <select name="service" id="petService">
-                <option value="shower">Shower</option>
-                <option value="nails">Nails Cut</option>
-                <option value="hair"> Hair Cut</option>
-                <option value="full">Full Service</option>
-            </select>
+        <h2>Register</h2>   
+    
+        <div class="form-wrap">
+
+            <div class="grid-item form-floating mb-3">
+                <input type="text" name="name" id="petName" placeholder="Enter name" class="form-control-sm form-control">
+                <label for="floatingInput">Pet name:</label>
+            </div>
             
-        </p>
-        <p>
-            <label for="owner">Owner's Name:* </label>
-            <input type="text" name="owner" id="ownerName">
-        </p>
-        <p>
-            <label for="phone">Phone:* </label>
-            <input type="text" name="phone" id="ownerPhone">
-        </p>
+            <div class="grid-item form-floating mb-3">
+                <input type="number" name="name" id="petAge" placeholder="Enter age" class="form-control-sm form-control">
+                <label for="floatingInput">Pet age:</label>
+            </div>
+
+            <div class="grid-item col-md">
+                <div class="form-floating">
+                <select class="form-select" name="type" id="type">
+                    <option selected>Type of animal:</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="bird">Bird</option>
+                </select>
+                <label for="type">Type:</label>                
+                </div>
+            </div>
+
+            <div class="grid-item form-floating mb-3">
+                <input type="text" name="name" id="petBreed" placeholder="Enter breed" class="form-control-sm form-control">
+                <label for="floatingInput">Pet breed:</label>
+            </div>
+
+            <div class="grid-item col-md">
+                <div class="form-floating">
+                <select class="form-select" name="service" id="petService">
+                    <option selected>Select service</option>
+                    <option value="shower">Shower</option>
+                    <option value="nails">Nails Cut</option>
+                    <option value="hair"> Hair Cut</option>
+                    <option value="full">Full Service</option>
+                </select>
+                <label for="service">Service:</label>                
+                </div>
+            </div>
+
+            <div class="grid-item form-floating mb-3">
+                <input type="text" name="name" id="ownerName" placeholder="Enter owner name" class="form-control-sm form-control">
+                <label for="floatingInput">Owner name:</label>
+            </div>
+
+            <div class="grid-item form-floating mb-3">
+                <input type="text" name="name" id="ownerPhone" placeholder="Enter phone" class="form-control-sm form-control">
+                <label for="floatingInput">Owner phone:</label>
+            </div>
+            
+        
+            <div class="grid-item">
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" value="male" id="male"> 
+                <label class="radio-bg form-check-label" for="gender">Male</label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" value="female" id="female"> 
+                <label class="radio-bg form-check-label" for="gender">Female</label>
+                </div>
+            </div>
+        </div>
 
         <button type="button" class="btn btn-warning" id="registerBtn">Register</button>
         <div id="pets">
@@ -98,7 +120,9 @@
                     <th>Price</th>
                 </tr>
             </thead>
-
+            <div>
+                <h3>Pup inventory!</h3>
+            </div>
             <div class="search">
 
                 <input type="text" name="search" id="searchPet">

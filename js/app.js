@@ -117,6 +117,10 @@ function searchPet(){
     }
 }
 
+function getGender(){
+    txtGender = document.querySelectorAll("input[type='radio']:checked");
+}
+
 
 function init(){
     
