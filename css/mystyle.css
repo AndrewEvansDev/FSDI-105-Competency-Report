@@ -314,15 +314,14 @@ div.serviceText{
     margin-left:auto;
     border-right:7px solid var(--prim-color);
     border-left:7px solid var(--prim-color);
+
 }
 @media(max-width:768px){
     div.serviceText{
         display:none;
     }
 }
-.serviceText a{
-    text-decoration:none;
-}
+
 .serviceText p{
 
     flex:1;
@@ -332,6 +331,13 @@ div.serviceText{
     font-size:1.5rem;
     padding:1rem;
     background-color: var(--prim-color);
+    
+}
+.serviceText p:hover{
+    cursor:grab;
+    background: rgba(0,0,0,0);
+	text-shadow:0 0 10px #241d20;
+	box-shadow: inset 0 0 30px 3px #ede3dd34;
 }
 
 /* wrap services description and images */

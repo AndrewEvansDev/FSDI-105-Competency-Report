@@ -118,3 +118,20 @@ $($infoRequestTab).click(function(){
     $requestInfo.show();
     $(':root').css('--prim-color', '#644634').css('--sec-color','#ede3dd');
 })
+
+$('.serviceText p').mousedown(function(){
+    $('.serviceText p').css('cursor','grabbing')
+})
+$('.serviceText p').mouseup(function(){
+    $('.serviceText p').css('cursor','grab')
+})
+
+
+
+
+
+
+
+
+
+
