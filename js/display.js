@@ -1,4 +1,11 @@
+
+ var currentPets = $('salon.pets')
+
+
 function displayTable(aPet){
+   
+
+
     if(aPet.service==="shower"){
         aPet.price=20;
     }else if(aPet.service==="full"){
@@ -21,7 +28,7 @@ function displayTable(aPet){
     }
 
     var row=`
-        <tr id=${aPet.id}> 
+        <tr class="tr" id=${aPet.id}> 
             <td>${icon}</td>
             <td>${aPet.name} </td>
             <td>${aPet.age}</td>

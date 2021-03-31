@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,800;1,400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">    
     <link rel="stylesheet" href="css/mystyle.css">
-    <title>Services</title>
+
+    <script src="https://kit.fontawesome.com/6da635e2db.js" crossorigin="anonymous"></script>
+    <title>The Pampered Pup</title>
 </head>
 <body>
     <header>
 
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#">The Pampered Pup Salon</a>
+            <a class="navbar-brand" href="#"><img src="img/pup-header.webp"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -30,22 +35,71 @@
     </div>
     </header>
 
+<main>
+    <div class="myContainer">
+    <div class="serviceText">
 
-    <main class='container-fluid'>
-
-    <div id='toggle'>
-        <div class='btn-wrap'>
-        <button id="serviceBtn1">Doggy Bath</button><button id="serviceBtn2">Nail Clip</button><button id="serviceBtn3">Hair Cut</button><button id="serviceBtn4">Full Serivce</button></div>        
-        <div id="serv1"><img src="img/backgroundpups.webp" alt=""><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nemo mollitia culpa aliquam animi. Velit, doloribus. Magni consectetur excepturi neque quos illum repellat laboriosam praesentium, harum molestiae nisi facere ex!</p></div>
-        <div id="serv2"><img src="img/dogatgroomer.webp" alt=""><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, rerum, nam consectetur reiciendis beatae nemo quas rem libero in reprehenderit perferendis repellendus obcaecati dolore maiores dignissimos dolor distinctio quia praesentium!</p></div>
-        <div id="serv3"><img src="img/doggrooming.webp" alt=""><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque rerum voluptate, recusandae nemo earum veritatis necessitatibus, deserunt, sapiente nesciunt itaque qui maiores! Officia repellat architecto impedit blanditiis nobis, magnam dignissimos.</p></div>
-        <div id="serv4"><img src="img/happydog.webp" alt=""><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat culpa corrupti molestiae esse quos optio, totam velit dignissimos qui tempore ratione nulla rerum quas nemo praesentium accusamus exercitationem itaque necessitatibus?</p></div>
+        <p id="fullServTab">Full Service</p>
+        <p id="basicCutTab">Basic Cut</p>
+        <p id="showerTab">Shower</p>
+        <p id="nailClipTab">Nail Clip</p>
+        <p id="infoRequestTab">Request Info</p>        
     </div>
+    <div class="iconBar">
+        <img id="fullServIcon" src="/svg/004-beauty-saloon.svg" alt="">
+        <img id="basicCutIcon" src="/svg/005-grooming.svg" alt="">
+        <img id="nailClipIcon" src="/svg/001-nail-clippers.svg" alt="">
+        <img id="showerIcon" src="/svg/010-pet.svg" alt="">
+
+    </div>
+        <div class="msgWrap">
+        <div id="fullServMsg">
+        <p>Text describing full service. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed corrupti dicta suscipit officiis ex error pariatur commodi! Beatae magnam doloribus corporis soluta reiciendis et aspernatur, ex tenetur maxime commodi ratione?</p>
+        <img src="/img/doggrooming.webp" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora quos pariatur error ipsam, harum aperiam ratione similique at enim possimus, nemo assumenda magni reiciendis porro? Vel, consectetur saepe. Pariatur, aut.</p>
+
+        </div>
+        <div id="basicCutMsg">
+        <p>Text describing basic cut. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim veritatis aliquam nostrum hic nam labore, quae molestiae dolorem in cum quas nulla repellendus at quibusdam magnam eum impedit quasi repellat?</p>
+        <img src="/img/dogatgroomer.webp" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Libero totam at dolorum accusamus, voluptatibus commodi ex vitae possimus aliquam quaerat tempore amet sapiente corrupti odit quae delectus pariatur excepturi veritatis.</p>
+        </div>
+        <div id="nailClipMsg">
+        <p>Text describing nail trim service. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet, obcaecati similique omnis quibusdam sapiente eum ducimus. Officiis, in. Explicabo tempore qui laudantium reiciendis! Ut pariatur autem mollitia! Dignissimos, vero ea.</p>
+        <img src="/img/happydog.webp" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, molestiae? Molestias optio mollitia dolores numquam quam pariatur consequatur sequi voluptatem laborum. Suscipit quis consequuntur ea dolores nobis facilis dolore sapiente.</p>
+        </div>
+        <div id="showerMsg">
+        <p>Text describing shower. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet, obcaecati similique omnis quibusdam sapiente eum ducimus. Officiis, in. Explicabo tempore qui laudantium reiciendis! Ut pariatur autem mollitia! Dignissimos, vero ea.</p>
+        <img src="/img/satisfied customer.webp" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi illo quis, iure deleniti quaerat soluta, inventore, laudantium modi culpa eos quas asperiores? Rerum corrupti laborum dicta velit odio ipsum incidunt.</p>
+        </div>
+        <div id="requestInfo" class="serviceContact">
+        <img src="/img/backgroundpups.webp" alt="">
+        <div class="form-floating">
+        <input type="name" class="form-control" id="qName" placeholder="Name">
+        <label for="floatingName">Name</label>
+        </div>            
+        <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="qEmail" placeholder="name@example.com">
+        <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+        <textarea class="form-control" placeholder="Please state your question or comment here." id="qTextarea" style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Questions?</label>
+        <button id="submitQuestion">Submit</button><span id="msgSent">Success! <i class="far fa-check-circle"></i></span><span id="msgFail">Failure <i class="fas fa-exclamation-circle"></i></span>
+        </div>
+        
+    </div><!--requestInfo-->
+    </div> <!--msgWrap-->
+    </div><!--mycontainer-->
+</main>
 
 
-    </main>
     
-    <footer id="footer-info" class="footer">
+    <footer class="footer-container">
+
+        
     </footer>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

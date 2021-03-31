@@ -1,9 +1,10 @@
 const salon={
-    name:'The Fashion Pet',
+    name:'The Pampered Pup',
     address:{
-        city:'Tijuana',
-        street:'Av. Univesidad',
-        number:'262-k'
+        city:'Kelso',
+        street:'West Main St',
+        number:'300',
+        state:'WA'
     },
     hours:{
         open:'9:00 am',
@@ -12,15 +13,14 @@ const salon={
     pets:[]
 }
 
-var {name,address:{city,street,number},hours:{open,close}}=salon; 
 
-function displayInfo(){
-    document.getElementById('footer-info').innerHTML=`
-    <p> ${name}</p>
-    <p> ${street} ${number}, ${city}</p>
-    <p> It opens from ${open} to ${close}</p>
-    `;
-}
+var {name,address:{city,street,number,state},hours:{open,close}}=salon; 
+
+$('.footer-container').html(`
+    <div class="footer-item"><img src="img/pamperedpuplogo.webp"></div>
+    <div class="footer-item"><a href="https://www.google.com/maps/dir//300%20West%20Main%20St,%20Kelso,%20WA%2098626">${number} ${street}, ${city}, ${state}</a></div>
+    <div class="footer-item">Hours: ${open} to ${close}</div>
+    `);
 
 c=0;
 class Pet{
@@ -44,34 +44,33 @@ class Pet{
 // get the value from inputs and store them in vars
 var txtName=document.getElementById('petName');
 var txtAge=document.getElementById('petAge');
-var txtGender = document.querySelectorAll("input[type='radio']:checked");
 var txtBreed=document.getElementById('petBreed');
+var txtGender=document.getElementById('petGender');
 var txtService=document.getElementById('petService');
 var txtOwner=document.getElementById('ownerName');
 var txtPhone=document.getElementById('ownerPhone');
 var txtType=document.getElementById('type');
 
 
+
 function register(){
-    
     if(txtName.value !="" && txtAge.value !="" && txtBreed.value!=""){
-        // create a generic thePet
         var thePet=new Pet(txtName.value,txtAge.value,txtGender.value,txtBreed.value,txtService.value,txtOwner.value,txtPhone.value,txtType.value);
-        console.log(thePet);
-        //push thePet into the array
         salon.pets.push(thePet);
         displayTable(thePet);
-        console.log(salon.pets);
         clear();
+        $('#alert-box').removeClass('inactive');
+        setTimeout(function(){
+            $('#alert-box').addClass('inactive');
+        },3000)
     }else{
-        alert("Hey you have to complete all the fields");
+        alert("finish the form!");
     }
 }
 
 function clear(){
     txtName.value="";
     txtAge.value="";
-    txtGender.value="";
     txtBreed.value="";
     txtService.value="";
     txtOwner.value="";
@@ -83,7 +82,7 @@ function profitCalculation(){
     for(var i=0;i<salon.pets.length;i++){
         sum=sum+salon.pets[i].price;
     }
-    document.getElementById('profits').innerHTML=`Profits: $${sum}`;
+    document.getElementById('profits').innerHTML=`<p id="profit" class="profit">Profits: $${sum}</p>`;
 }
 
 function deletePet(petId){
@@ -104,22 +103,24 @@ function deletePet(petId){
     salon.pets.splice(indexDelete,1);
     //delete from html
     tr.remove();
+    $('#delete-box').removeClass('inactive');
+        setTimeout(function(){
+            $('#delete-box').addClass('inactive');
+        },3000)
 }
 
 function searchPet(){
     var ss = $('#searchPet').val();
     var searchString=ss.toLowerCase();
-    for (var i=0; i<salon.pets.length;i++){
-        var selected = salon.pets[i];
-        if(ss===selected.name.toLowerCase()||searchString===selected.service.toLowerCase()){
-            $('#'+selected.id).addClass('selected');
+    salon.pets.forEach((aPet)=>{
+        if(aPet.name.toLowerCase().includes(searchString)||aPet.type.toLowerCase().includes(searchString)){
+            $('#'+aPet.id).removeClass('inactive');
+        }else{
+            $('#'+aPet.id).addClass('inactive');
         }
     }
-}
+)}
 
-function getGender(){
-    txtGender = document.querySelectorAll("input[type='radio']:checked");
-}
 
 
 function init(){
@@ -140,8 +141,15 @@ function init(){
     profitCalculation();
     $('#registerBtn').on('click',register);
     $('#searchBtn').on('click',searchPet);
-
-    // hook events
+    $('#alert-box').addClass('inactive');
+    $('#delete-box').addClass('inactive');
+    $('#searchPet').keypress(function(e){
+        if(e.key==="Enter"){
+            searchPet();
+        }
+    })
 }
+    $('#searchPet').on('keyup',searchPet)
 
 window.onload=init;
+

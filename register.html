@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,800;1,400&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/normalize.css">    
     <link rel="stylesheet" href="css/mystyle.css">
+
     <script src="https://kit.fontawesome.com/6da635e2db.js" crossorigin="anonymous"></script>
-    <title>The Fashion Pet</title>
+    <title>The Pampered Pup</title>
 </head>
 <body>
     <header>
+
         <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
             <div class="container-fluid">
-            <a class="navbar-brand" href="#">The Pampered Pup Salon</a>
+            <a class="navbar-brand" href="#"><img src="img/pup-header.webp"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -31,7 +36,8 @@
     </header>
 
     <main class="container">
-        <h2>Register</h2>   
+        <p class ="reg-header-desktop">Pet Registration Form</p>
+        <p class="reg-header-mobile">Registration</p>
     
         <div class="form-wrap">
 
@@ -41,15 +47,14 @@
             </div>
             
             <div class="grid-item form-floating mb-3">
-                <input type="number" name="name" id="petAge" placeholder="Enter age" class="form-control-sm form-control">
+                <input min="0" max="30" type="number" name="name" id="petAge" placeholder="Enter age" class="form-control-sm form-control">
                 <label for="floatingInput">Pet age:</label>
             </div>
 
             <div class="grid-item col-md">
                 <div class="form-floating">
                 <select class="form-select" name="type" id="type">
-                    <option selected>Type of animal:</option>
-                    <option value="dog">Dog</option>
+                    <option selected value="dog">Dog</option>
                     <option value="cat">Cat</option>
                     <option value="bird">Bird</option>
                 </select>
@@ -65,11 +70,10 @@
             <div class="grid-item col-md">
                 <div class="form-floating">
                 <select class="form-select" name="service" id="petService">
-                    <option selected>Select service</option>
                     <option value="shower">Shower</option>
-                    <option value="nails">Nails Cut</option>
+                    <option value="nails">Nail clip</option>
                     <option value="hair"> Hair Cut</option>
-                    <option value="full">Full Service</option>
+                    <option selected value="full">Full Service</option>
                 </select>
                 <label for="service">Service:</label>                
                 </div>
@@ -84,27 +88,26 @@
                 <input type="text" name="name" id="ownerPhone" placeholder="Enter phone" class="form-control-sm form-control">
                 <label for="floatingInput">Owner phone:</label>
             </div>
-            
-        
-            <div class="grid-item">
-                <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" value="male" id="male"> 
-                <label class="radio-bg form-check-label" for="gender">Male</label>
-                </div>
-                <div class="form-check">
-                <input class="form-check-input" type="radio" name="gender" value="female" id="female"> 
-                <label class="radio-bg form-check-label" for="gender">Female</label>
+
+            <div class="grid-item col-md">
+                <div class="form-floating">
+                <select class="form-select" name="gender" id="petGender">
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select>
+                <label for="gender">Gender:</label>                
                 </div>
             </div>
+            
+            </div>
+        <div class="btn-wrap">
+        <button type="button" class="registerBtn" id="registerBtn">Register</button>
         </div>
 
-        <button type="button" class="btn btn-warning" id="registerBtn">Register</button>
         <div id="pets">
 
         </div>
-        <div id="profits">
-            
-        </div>
+
         <div class="table-wrap"> <!--table wrap-->
         <table>
             <thead>
@@ -121,13 +124,18 @@
                 </tr>
             </thead>
             <div>
-                <h3>Pup inventory!</h3>
+                <h3 class="table-h3"><strong>Pupstomer List</strong></h3>
             </div>
             <div class="search">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+                <input class="regSearch" type="text" name="search" id="searchPet" placeholder="search">
 
-                <input type="text" name="search" id="searchPet">
-                <button class="btn btn-warning" id="searchBtn">Search</button>
-
+                <div id="alert-box" class="alert alert-success" role="alert">
+                    New pet registered!
+                </div>
+                <div id="delete-box" class="alert alert-warning" role="alert">
+                    OH NO YOU KILLED LASSIE!
+                </div>
             </div>
             
             <tbody id="pet-table">
@@ -135,15 +143,18 @@
             </tbody>
         </table>
     </div> <!--table wrap-->
+        <div id="profits">
+            
+        </div>    
     </main>
 
-    <footer class="container">
-        <p id="footer-info">
+    <footer class="footer-container">
 
-        </p>
+        
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="js/display.js"></script>
     <script src="js/app.js"></script>
     
