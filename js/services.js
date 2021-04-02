@@ -13,7 +13,13 @@ class Question{
     }
 }
 
-$submitBtn.click(function addQuestion(){
+$(document).keypress(function(e) {
+    if(e.keyCode==13){addQuestion};
+})
+
+
+$submitBtn.click(addQuestion)
+function addQuestion(){
     if($qName.val() !="" && $qEmail.val() !="" && $qTextarea.val()!=""){
         var dQuestion = new Question($qName.val(),$qEmail.val(),$qTextarea.val())
         console.log(dQuestion);
@@ -30,7 +36,7 @@ $submitBtn.click(function addQuestion(){
             $('#msgFail').hide();
         },5000)
     }
-})
+}
 
 const $fullServBtn = $('#fullServIcon');
 const $basicCutBtn = $('#basicCutIcon');
@@ -126,9 +132,11 @@ $('.serviceText p').mouseup(function(){
     $('.serviceText p').css('cursor','grab')
 })
 
-
-
-
+$("#todoText").keypress(function(e){
+    if(e.key ==="Enter"){
+        saveTodo()
+    }
+})
 
 
 

@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("div#img-slide div.slide:first").show();
-    setInterval(function(){ Next($('div#img-slide div.slide:visible'))}, 15000);
+    setInterval(function(){ Next($('div#img-slide div.slide:visible'))}, 10000);
 
 });
 function Next(slide) {

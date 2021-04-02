@@ -18,7 +18,7 @@ var {name,address:{city,street,number,state},hours:{open,close}}=salon;
 
 $('.footer-container').html(`
     <div class="footer-item"><img src="img/pamperedpuplogo.webp"></div>
-    <div class="footer-item"><a href="https://www.google.com/maps/dir//300%20West%20Main%20St,%20Kelso,%20WA%2098626">${number} ${street}, ${city}, ${state}</a></div>
+    <div class="footer-item"><a href="https://www.google.com/maps/dir//300%20West%20Main%20St,%20Kelso,%20WA%2098626" target="_blank">${number} ${street}, ${city}, ${state}</a></div>
     <div class="footer-item">Hours: ${open} to ${close}</div>
     `);
 
