@@ -12,3 +12,39 @@ function Next(slide) {
     }
 }
 
+$('#ba1').show();
+$('#s1').click(function(){
+    $('#pupbuttonSlide img:visible').hide();
+    $('#ba1').show();
+})
+$('#s2').click(function(){
+    $('#pupbuttonSlide img:visible').hide();
+    $('#ba2').show();
+})
+$('#s3').click(function(){
+    $('#pupbuttonSlide img:visible').hide();
+    $('#ba3').show();
+})
+$('#s4').click(function(){
+    $('#pupbuttonSlide img:visible').hide();
+    $('#ba4').show();
+})
+$('#s5').click(function(){
+    $('#pupbuttonSlide img:visible').hide();
+    $('#ba5').show();
+    
+})
+$('#s6').click(function(){
+    $('#pupbuttonSlide img:visible').hide();
+    $('#ba6').show();
+})
+$(".pegBar img").hover(
+    function() {
+        $(this).addClass("spinner");
+    }, function() {
+        $(this).removeClass("spinner");
+    }
+);
+$(".pegBar img").mousedown(function(){
+    $(this).addClass("btnDown")
+})

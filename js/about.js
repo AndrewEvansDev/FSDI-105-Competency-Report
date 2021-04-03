@@ -1,45 +1,10 @@
-$('#ba1').show();
-$('#s1').click(function(){
-    $('#aboutSlide img:visible').hide();
-    $('#ba1').show();
-})
-$('#s2').click(function(){
-    $('#aboutSlide img:visible').hide();
-    $('#ba2').show();
-})
-$('#s3').click(function(){
-    $('#aboutSlide img:visible').hide();
-    $('#ba3').show();
-})
-$('#s4').click(function(){
-    $('#aboutSlide img:visible').hide();
-    $('#ba4').show();
-})
-$('#s5').click(function(){
-    $('#aboutSlide img:visible').hide();
-    $('#ba5').show();
-    
-})
-$('#s6').click(function(){
-    $('#aboutSlide img:visible').hide();
-    $('#ba6').show();
-})
-$(".pegBar img").hover(
-    function() {
-        $(this).addClass("spinner");
-    }, function() {
-        $(this).removeClass("spinner");
-    }
-);
-$(".pegBar img").mousedown(function(){
-    $(this).addClass("btnDown")
-})
-$(".pegBar img").mouseup(function(){
-    $(this).removeClass("btnDown")
-})
+
+// $(".pegBar img").mouseup(function(){
+//     $(this).removeClass("btnDown")
+// })
 
 
-const questionArr = [];
+const questionArray = [];
 const $sName = $('#sName');
 const $sEmail = $('#sEmail');
 const $sTextarea = $('#sTextarea');
@@ -58,7 +23,7 @@ function reqInfo(){
     if($sName.val() !="" && $sEmail.val() !="" && $sTextarea.val()!=""){
         var question = new InfoRequest($sName.val(),$sEmail.val(),$sTextarea.val())
         console.log(question);
-        questionArr.push(question);
+        questionArray.push(question);
         $(':input').val('');
         $('#sent').show();
         setTimeout(function(){

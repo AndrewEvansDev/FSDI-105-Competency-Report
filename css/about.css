@@ -1,175 +1,39 @@
-h1{
+.abouth1{
+    font-size:4rem;
+    font-weight:900;
     font-weight:900;
     text-align:center;
     color:#211711;
-    font-size:4rem;
-    background-color:#caad9ac9;
-    max-width: fit-content;
     margin-left:auto;
     margin-right:auto;
-    padding:1rem;
-    border:10px solid #211711;
-    border-radius: 10px;
     text-shadow:2px 2px 5px black;
-
 }
 @media(max-width:768px){
-    h1{
+    .abouth1{
         font-size:2rem;
     }
 }
-h2{
-    text-align: center;
-    color:white;
-    padding: 1rem 1rem 1rem 0;
-    font-weight:700;
-    text-shadow:2px 2px 5px #000000;
-}
-h3{
-    padding:3rem 1rem 1rem 1rem;
-    text-align:center;
-    color:white;
-    background-color:#553D2D;
-    border-top-right-radius:10px;
-    text-shadow:1.5px 1.5px 5px #000000;
-}
-@media(min-width:768px){
-    .aboutWrap{
-        border-radius:10px;
-    }
-    .aboutText{
-        border-top-right-radius:10px;
-        border-bottom-right-radius: 10px;
-    }
-}
-.aboutWrap{
-    display:flex;
-    flex-direction:row;
-    justify-content: flex-start;
-    margin-bottom:5rem;
-    width:fit-content;
-    max-width: 100%;
-    background-color: #553D2D;
+.aboutInfo{
+    font-size:1.2rem;
+    font-weight:900;
+    font-weight:900;
+    color:#211711;
     margin-left:auto;
     margin-right:auto;
-    
-}
-@media(max-width:768px){
-    .aboutWrap{
-        display:block;
-    }
-}
-.slideWrap{
-    display:flex;
-    flex-direction: column;
-    margin-left:0;
-    margin-right:0;
-    max-width:100%;
-}
-@media(max-width:768px){
-    .slideWrap{
-        margin-left:auto;
-        margin-right:auto;
-    }
-}
-
-div#aboutSlide{
-    max-width: 100%;
-    width:500px;
-}
-.aboutSlide img{
-    padding-bottom:6rem;
-    background-color:#553D2D;
-    max-width: 100%;
-    width:500px;
-    z-index:-10;
-    border: 10px solid #553D2D;
-}
-#ba1,#ba2,#ba3,#ba4,#ba5,#ba6{
-    display:none;
-}
-
-.pegBar{
-    display:flex;
-
-    flex-direction: row;
-    justify-content:flex-start;
-    max-width: inherit;
-}
-#s1,#s2,#s3,#s4,#s5,#s6{
-    flex:1;
-    z-index: 1000;
-    font-size:2.5rem;
-}
-@media(min-width:768px){
-#s1{
-    margin-left:0.5rem;
-}}
-
-.pegBar img{
-    max-width:80px;
-    width:auto;
-    min-width:40px;
-    margin-top:-7rem;
-}
-
-.aboutText{
-    background-color:#553D2D;
-    border-top-right-radius:10px;
-    border-bottom-right-radius: 10px;
-    overflow:hidden;
-}
-.aboutText ul{
-    flex:1;
-    list-style: none;
-    background-color:#553D2D;
-    color:white;
-    width:500px;
-    min-width:250px;
-    max-width:100%;
-    margin-left:0;
-    margin-top:1rem;
-}
-@media(max-width:768px){
-    .aboutText ul{
-        margin-left:-2rem;
-    }
-}
-.aboutText ul li{
+    text-shadow:px 1px 2px black;
+    background-color:#EACEB3;
     padding:1rem;
-    max-width: 100%;
+    max-width: 1000px;
+    border:10px solid #211711;
+    border-radius: 10px;
+    margin-bottom: 1rem;;
 }
-.helpText{
-    color:white;
-    text-align: center;
-    margin-top:-1rem;
-}
-.btnDown{
-    cursor:pointer;
-    filter: brightness(150%);
-}
-.spinner {
-    transform-box: fill-box;
-    animation: spin 2s linear infinite;
-    transform-origin:50% 50%;
-}
-
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% {  transform: rotate(359deg); }
-}
-#fail,#success{
-    display:none;
-}
-
-.serviceContact{
-    max-width:100%;
-    width:800px;
-    margin-left:auto;
-    margin-right:auto;
-    background-color:#553D2D;
-    padding:1rem;
+@media(max-width:768px){
+    .aboutInfo{
+        border-right:none;
+        border-left:none;
+        border-radius:0;
+    }
 }
 
 #reqInfo{
@@ -183,12 +47,54 @@ div#aboutSlide{
     font-size:2rem;
     margin:1rem;
 }
+@media(max-width:768px){
+    div.serviceContact{
+        border-radius: 0;
+    }
+}
 #reqInfo:hover{
     cursor:pointer;
     box-shadow:inset 5px  5px 25px rgba(0, 0, 0, 0.2),inset -5px  5px 25px rgba(0, 0, 0, 0.2),inset 5px  -5px 25px rgba(0, 0, 0, 0.2),inset -5px  -5px 25px rgba(0, 0, 0, 0.2);
 }
+#fail,#success{
+    display:none;
+}
+.serviceContact{
+    max-width:100%;
+    width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:3rem;
+    background-color:#553D2D;
+    padding:1rem;
+    border-radius:10px;
+}
+
+.aboutContainer{
+    display:flex;
+    flex-direction:column;
+}
+.daCrew{
+    max-width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:1rem;
+}
 @media(min-width:768px){
-    .serviceContact{
+    .daCrew{
+        border:1rem solid #211711;
         border-radius:10px;
     }
+    .serviceContact{
+        border:1rem solid #211711;
+    }
+}
+.daCrew img{
+    max-width:100%;
+    width:1000px;
+    margin-left:auto;
+    margin-right:auto;
+}
+#sName{
+    margin-bottom:1rem;
 }
